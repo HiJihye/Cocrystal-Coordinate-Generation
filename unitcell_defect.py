@@ -159,7 +159,7 @@ def run_series_substitution(target_file, source_file, target_example_idx=0, wrap
             current = run_pre_optimization(current)
             if wrap_coords: current.wrap(pbc=current.pbc)
             
-            out_name = f"{final_prefix}_{concentration:.0f}%_{mode}.xyz"
+            out_name = f"{final_prefix}_{concentration:.0f}percent_{mode}.xyz"
             write(out_name, current)
             print(f"  └─ Saved: {out_name} ({count}/{total_sites} molecules)")
 
