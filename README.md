@@ -12,7 +12,7 @@ This Python-based pipeline automates the process of substituting molecules withi
     * Generates both `orig` and `flip` (180° rotation) orientations.
     * Includes a **Symmetry Check** to skip redundant `flip` structures if the molecule is centrosymmetric or symmetric along its primary axis.
 * **Soft-Repulsive Pre-Optimization**: Implements a custom ASE `Calculator` to "push" overlapping atoms apart before saving, ensuring the structures are ready for DFT or higher-level force-field calculations.
-
+* 
 ---
 
 ## 2. Requirements
@@ -57,11 +57,9 @@ Newly inserted molecules may overlap with the existing lattice. We resolve this 
 
 ## 4. Usage
 
-### Configuration
-The pipeline is executed through the `run_series_substitution_optimized` function. You only need to modify the arguments in the `__main__` block.
+Modify the `if __name__ == "__main__":` block to set your input files. The script will automatically calculate the maximum possible substitution (up to 50% of candidates) and generate the series.
 
-```python
-run_series_substitution_optimized(
-    target_file='host_structure.xyz',   # The crystal lattice file (e.g., .xyz, .vasp)
-    source_file='guest_molecule.cif',  # The molecule to be inserted (.cif, .xyz)
-)
+| Parameter | Description |
+| :--- | :--- |
+| `target_file` | Host crystal structure. |
+| `source_file` | Guest molecule to insert. |
