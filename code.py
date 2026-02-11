@@ -166,7 +166,5 @@ def run_series_substitution(target_file, source_file, target_example_idx=0, wrap
 if __name__ == "__main__":
     run_series_substitution(
         target_file='ACRDIN04_vasp_output_0030.xyz', 
-        source_file='NICOAM01.cif',
-        target_example_idx=0,
-        seed=42
+        source_file='NICOAM01.cif'
     )
